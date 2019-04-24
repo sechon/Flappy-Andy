@@ -149,6 +149,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Andy.cpp" />
+    <ClCompile Include="Collision.cpp" />
     <ClCompile Include="CreateSprite.cpp" />
     <ClCompile Include="FlappyAndy.cpp" />
     <ClCompile Include="main.cpp" />
@@ -158,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Andy.h" />
+    <ClInclude Include="Collision.h" />
     <ClInclude Include="CreateSprite.h" />
     <ClInclude Include="FlappyAndy.h" />
     <ClInclude Include="Pipe.h" />

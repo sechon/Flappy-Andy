@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include "Collision.cpp"
 
 using std::string;
 using sf::Sprite;

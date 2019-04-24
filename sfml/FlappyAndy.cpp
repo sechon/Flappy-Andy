@@ -6,6 +6,7 @@
 
 #include "FlappyAndy.h"
 
+
 void FlappyAndy::runApp() {
 
 	bool soundSuccess = false, collisionSuccess = false, pointCheck = false;
@@ -182,12 +183,8 @@ void FlappyAndy::runApp() {
 				pointCheck = true;
 			}
 
-			if ((pipeBottom->getSprite().getPosition().x + pipeBottom->getSprite().getGlobalBounds().width - andy->getPositionX()) <=
-				(andy->getGlobalWidth() + pipeBottom->getSprite().getGlobalBounds().width) &&
-				(andy->getPositionY() + andy->getGlobalHeight()) >=
-				(pipeBottom->getSprite().getPosition().y)
-				//|| (AndySprite.getPosition().y < pipe2.getPosition().y + pipe2.getGlobalBounds().height)
-				) {
+			if (Collision::PixelPerfectTest(andy->getSprite(),pipeBottom->getSprite()) || Collision::PixelPerfectTest(andy->getSprite(), pipeTop->getSprite()))
+			{
 				if (soundSuccess == false) {
           					Splat.play();
 					soundSuccess = true;
