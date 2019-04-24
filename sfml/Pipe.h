@@ -1,3 +1,7 @@
+//Flappy Andy
+//CPTS 122 PA9
+//Braxton Chatman, Jacob Chong, Molly Morris, Spencer Echon
+
 //Pipe.h
 #pragma once
 #include "Andy.h"
@@ -20,7 +24,11 @@ public:
 
 	void initializePipe();
 
+	void scalePipe();
+
 	void setPipePosition(float x, float y);
+
+	void movePipe(float x, float y);
 
 	bool isCollision(float AndyTop, float AndyBottom);
 

@@ -37,6 +37,7 @@ public:
 
 	void setName(const string newName);
 	void setSprite(Sprite newSprite);
+	void scaleSprite(float x, float y);
 
 	string getName();
 	Sprite getSprite();

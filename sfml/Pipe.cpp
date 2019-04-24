@@ -1,3 +1,7 @@
+//Flappy Andy
+//CPTS 122 PA9
+//Braxton Chatman, Jacob Chong, Molly Morris, Spencer Echon
+
 //Pipe.cpp
 
 //redefine
@@ -46,6 +50,12 @@ void Pipe::setHeight(float newHeight) {
 
 }
 
+void Pipe::scalePipe() {
+	
+	mySprite.scale(adjustX,adjustY);
+
+}
+
 float Pipe::getFront() {
 
 	return frontOfPipe;
@@ -66,6 +76,12 @@ void Pipe::initializePipe() {
 void Pipe::setPipePosition(float x, float y) {
 
 	mySprite.setPosition(x,y);
+
+}
+
+void Pipe::movePipe(float x, float y) {
+
+	mySprite.move(x,y);
 
 }
 

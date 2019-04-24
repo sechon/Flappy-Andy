@@ -53,3 +53,8 @@ Sprite CreateSprite::getSprite() {
 
 }
 
+void CreateSprite::scaleSprite(float x, float y) {
+
+	mySprite.scale(x,y);
+
+}

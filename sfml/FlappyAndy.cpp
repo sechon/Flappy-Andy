@@ -16,8 +16,8 @@ void FlappyAndy::runApp() {
 	sf::RenderWindow window(sf::VideoMode(1300, 700), "Flappy Andy");
 
 	//declerations
-	sf::Texture Background, Gameover, pipeT, pipe2T, pointsT;
-	sf::Sprite BackgroundSprite, GameoverSprite, pipe, pipe2, pointsS;
+	sf::Texture Gameover, pointsT;
+	sf::Sprite GameoverSprite, pointsS;
 	sf::SoundBuffer SplatBuffer;
 	sf::Sound Splat;
 	sf::Clock clock;
@@ -25,30 +25,38 @@ void FlappyAndy::runApp() {
 	Points pointClass;
 
 	//class declerations
+	CreateSprite *background = new CreateSprite("pics/background.png");
 	Andy *andy = new Andy("pics/andy2.png");
+	Pipe *pipeBottom = new Pipe("pics/pipe.png");
+	Pipe *pipeTop = new Pipe("pics/pipe2.png");
 	andy->initializeAndy();
+	pipeBottom->initializePipe();
+	pipeTop->initializePipe();
+	background->initializeSprite();
+	background->scaleSprite(adjustX,adjustY);
 
 	int i = 0, y = 0, y2 = 0, points = 0;
 
 	//set textures from file
-	Background.loadFromFile("pics/background.png");
-	pipeT.loadFromFile("pics/pipe.png");
-	pipe2T.loadFromFile("pics/pipe2.png");
 	pointsT.loadFromFile("pics/points.png");
 
 	//set sprites from textures
-	BackgroundSprite.setTexture(Background);
-	BackgroundSprite.scale(adjustX, adjustY);
+	//BackgroundSprite.setTexture(Background);
+	//BackgroundSprite.scale(adjustX, adjustY);
 
 	//pipe
 	//bottom
-	pipe.setTexture(pipeT);
-	pipe.scale(adjustX, adjustY);
-	pipe.setPosition(650, 500);
+	//pipe.setTexture(pipeT);
+	//pipe.scale(adjustX, adjustY);
+	//pipe.setPosition(650, 500);
+	pipeBottom->scalePipe();
+	pipeBottom->setPipePosition(650,500);
 	//top
-	pipe2.setTexture(pipe2T);
-	pipe2.scale(adjustX, adjustY);
-	pipe2.setPosition(650, -500);
+	//pipe2.setTexture(pipe2T);
+	//pipe2.scale(adjustX, adjustY);
+	//pipe2.setPosition(650, -500);
+	pipeTop->scalePipe();
+	pipeTop->setPipePosition(650, -500);
 
 
 	//gameover
@@ -81,10 +89,10 @@ void FlappyAndy::runApp() {
 		elapsed = clock.getElapsedTime();
 
 		//draw
-		window.draw(BackgroundSprite);
+		window.draw(background->getSprite());
 		window.draw(andy->getSprite());
-		window.draw(pipe2);
-		window.draw(pipe);
+		window.draw(pipeTop->getSprite());
+		window.draw(pipeBottom->getSprite());
 
 		//draw game over
 		if (collisionSuccess == true) {
@@ -104,7 +112,7 @@ void FlappyAndy::runApp() {
 			//constant gravity
 			if (andy->getPositionY() < 680) {
 				andy->moveAndy(0, 10);
-				andy->rotateAndy(10);
+				andy->rotateAndy(5);
 			}
 
 			//check for lower bounds
@@ -122,7 +130,7 @@ void FlappyAndy::runApp() {
 				if (andy->getPositionY() > -25) {
 					andy->setAndy(andy->getPositionX(), andy->getPositionY() - 5);
 					andy->moveAndy(0, -30);
-					andy->rotateAndy(-10);
+					andy->rotateAndy(-5);
 					jumpCheck++;
 				}
 				//check for upper bounds
@@ -140,8 +148,8 @@ void FlappyAndy::runApp() {
 			}
 
 			//moving pipe
-			pipe.move(-20, 0);
-			pipe2.move(-20, 0);
+			pipeBottom->movePipe(-20, 0);
+			pipeTop->movePipe(-20, 0);
 
 			//random reset pipe
 			i = rand() % 3;
@@ -159,25 +167,25 @@ void FlappyAndy::runApp() {
 				y2 = -400;
 				break;
 			}
-			if (pipe.getPosition().x < -200) {
-				pipe.setPosition(1400, y);
+			if (pipeBottom->getSprite().getPosition().x < -200) {
+				pipeBottom->setPipePosition(1400, y);
 				pointCheck = false;
 			}
-			if (pipe2.getPosition().x < -200) {
-				pipe2.setPosition(1400, y2);
+			if (pipeTop->getSprite().getPosition().x < -200) {
+				pipeTop->setPipePosition(1400, y2);
 			}
 
 
 			//points
-			if (pipe.getPosition().x < andyX && pointCheck == false) {
+			if (pipeBottom->getSprite().getPosition().x < andyX && pointCheck == false) {
 				points++;
 				pointCheck = true;
 			}
 
-			if ((pipe.getPosition().x + pipe.getGlobalBounds().width - andy->getPositionX()) <=
-				(andy->getGlobalWidth() + pipe.getGlobalBounds().width) &&
+			if ((pipeBottom->getSprite().getPosition().x + pipeBottom->getSprite().getGlobalBounds().width - andy->getPositionX()) <=
+				(andy->getGlobalWidth() + pipeBottom->getSprite().getGlobalBounds().width) &&
 				(andy->getPositionY() + andy->getGlobalHeight()) >=
-				(pipe.getPosition().y)
+				(pipeBottom->getSprite().getPosition().y)
 				//|| (AndySprite.getPosition().y < pipe2.getPosition().y + pipe2.getGlobalBounds().height)
 				) {
 				if (soundSuccess == false) {

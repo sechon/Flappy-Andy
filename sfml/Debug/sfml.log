@@ -1,2 +1,10 @@
-﻿  sfml.vcxproj -> C:\Users\Ichibahn\Documents\GitHub\Flappy-Andy\sfml\Debug\sfml.exe
+﻿  FlappyAndy.cpp
+c:\users\ichibahn\documents\github\flappy-andy\sfml\flappyandy.cpp(13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\ichibahn\documents\github\flappy-andy\sfml\flappyandy.cpp(36): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappy-andy\sfml\flappyandy.cpp(65): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappy-andy\sfml\flappyandy.cpp(69): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappy-andy\sfml\flappyandy.cpp(102): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappy-andy\sfml\flappyandy.cpp(171): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappy-andy\sfml\flappyandy.cpp(175): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  sfml.vcxproj -> C:\Users\Ichibahn\Documents\GitHub\Flappy-Andy\sfml\Debug\sfml.exe
   sfml.vcxproj -> C:\Users\Ichibahn\Documents\GitHub\Flappy-Andy\sfml\Debug\sfml.pdb (Full PDB)
