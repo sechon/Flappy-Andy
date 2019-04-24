@@ -5,14 +5,7 @@
 //Rules.h
 
 #pragma once
-
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include <iostream>
-
-#define adjustX 0.72
-#define adjustY 0.58
-#define andyX 200
+#include "Pipe.h"
 
 class Rules {
 public:
