@@ -16,20 +16,22 @@ void FlappyAndy::runApp() {
 	sf::RenderWindow window(sf::VideoMode(1300, 700), "Flappy Andy");
 
 	//declerations
-	sf::Texture Background, Andy, Gameover, pipeT, pipe2T, pointsT;
-	sf::Sprite BackgroundSprite, AndySprite, GameoverSprite, pipe, pipe2, pointsS;
-	sf::RectangleShape Pipe, PipeTop;
+	sf::Texture Background, Gameover, pipeT, pipe2T, pointsT;
+	sf::Sprite BackgroundSprite, GameoverSprite, pipe, pipe2, pointsS;
 	sf::SoundBuffer SplatBuffer;
 	sf::Sound Splat;
 	sf::Clock clock;
 	sf::Time elapsed = clock.getElapsedTime();
 	Points pointClass;
 
+	//class declerations
+	Andy *andy = new Andy("pics/andy2.png");
+	andy->initializeAndy();
+
 	int i = 0, y = 0, y2 = 0, points = 0;
 
 	//set textures from file
 	Background.loadFromFile("pics/background.png");
-	Andy.loadFromFile("pics/andy2.png");
 	pipeT.loadFromFile("pics/pipe.png");
 	pipe2T.loadFromFile("pics/pipe2.png");
 	pointsT.loadFromFile("pics/points.png");
@@ -37,21 +39,13 @@ void FlappyAndy::runApp() {
 	//set sprites from textures
 	BackgroundSprite.setTexture(Background);
 	BackgroundSprite.scale(adjustX, adjustY);
-	AndySprite.setTexture(Andy);
-	AndySprite.setScale(0.5, 0.5);
-	AndySprite.setPosition(andyX, 300);
 
 	//pipe
-	Pipe.setSize(sf::Vector2f(200, 400));
-	Pipe.setFillColor(sf::Color::Red);
-	Pipe.setOutlineColor(sf::Color::Black);
-	Pipe.setOutlineThickness(5);
-	Pipe.setPosition(sf::Vector2f(400, 700));
-
+	//bottom
 	pipe.setTexture(pipeT);
 	pipe.scale(adjustX, adjustY);
 	pipe.setPosition(650, 500);
-
+	//top
 	pipe2.setTexture(pipe2T);
 	pipe2.scale(adjustX, adjustY);
 	pipe2.setPosition(650, -500);
@@ -68,7 +62,6 @@ void FlappyAndy::runApp() {
 	pointsS.setPosition(0, 0);
 	
 	//audio
-
 	SplatBuffer.loadFromFile("audio/splat.wav");
 	Splat.setBuffer(SplatBuffer);
 
@@ -89,11 +82,9 @@ void FlappyAndy::runApp() {
 
 		//draw
 		window.draw(BackgroundSprite);
-		window.draw(AndySprite);
+		window.draw(andy->getSprite());
 		window.draw(pipe2);
 		window.draw(pipe);
-		
-		//window.draw(PipeTop);
 
 		//draw game over
 		if (collisionSuccess == true) {
@@ -110,40 +101,38 @@ void FlappyAndy::runApp() {
 			window.draw(pointsS);
 			pointClass.showPoints(window, points, 1250, 50);
 
-
 			//constant gravity
-			if (AndySprite.getPosition().y < 680) {
-				AndySprite.move(0, 10);
-				AndySprite.setRotation(10);
+			if (andy->getPositionY() < 680) {
+				andy->moveAndy(0, 10);
+				andy->rotateAndy(10);
 			}
+
 			//check for lower bounds
-			if (AndySprite.getPosition().y > 680 && soundSuccess == false) {
+			if (andy->getPositionY() > 680 && soundSuccess == false) {
 				Splat.play();
 				soundSuccess = true;
 				collisionSuccess = true;
 				////restarts loop time
 				clock.restart();
 				elapsed = clock.getElapsedTime();
-				//window.clear();
 			}
 
 			//flying up
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && jumpCheck <= 5){
-				if (AndySprite.getPosition().y > -25) {
-					AndySprite.setPosition(AndySprite.getPosition().x, AndySprite.getPosition().y - 5);
-					AndySprite.move(0, -30);
-					AndySprite.setRotation(-10);
+				if (andy->getPositionY() > -25) {
+					andy->setAndy(andy->getPositionX(), andy->getPositionY() - 5);
+					andy->moveAndy(0, -30);
+					andy->rotateAndy(-10);
 					jumpCheck++;
 				}
 				//check for upper bounds
-				if (AndySprite.getPosition().y < -25 && soundSuccess == false) {
+				if (andy->getPositionY() < -25 && soundSuccess == false) {
 					Splat.play();
 					soundSuccess = true;
 					collisionSuccess = true;
 					////restarts loop time
 					clock.restart();
 					elapsed = clock.getElapsedTime();
-					//window.clear();
 				}
 				jumpCheck = true;
 				clock.restart();
@@ -185,17 +174,9 @@ void FlappyAndy::runApp() {
 				pointCheck = true;
 			}
 
-			//collision
-			//old
-			//if ((Pipe.getPosition().x + Pipe.getSize().x - AndySprite.getPosition().x) <=
-			//	(AndySprite.getGlobalBounds().width + Pipe.getSize().x) &&
-			//	(AndySprite.getPosition().y + AndySprite.getGlobalBounds().height) >=
-			//	(Pipe.getPosition().y)
-			//	|| (AndySprite.getPosition().y < pipe2.getPosition().y + pipe2.getGlobalBounds().height)
-			//	) {
-			if ((pipe.getPosition().x + pipe.getGlobalBounds().width - AndySprite.getPosition().x) <=
-				(AndySprite.getGlobalBounds().width + pipe.getGlobalBounds().width) &&
-				(AndySprite.getPosition().y + AndySprite.getGlobalBounds().height) >=
+			if ((pipe.getPosition().x + pipe.getGlobalBounds().width - andy->getPositionX()) <=
+				(andy->getGlobalWidth() + pipe.getGlobalBounds().width) &&
+				(andy->getPositionY() + andy->getGlobalHeight()) >=
 				(pipe.getPosition().y)
 				//|| (AndySprite.getPosition().y < pipe2.getPosition().y + pipe2.getGlobalBounds().height)
 				) {
@@ -206,7 +187,6 @@ void FlappyAndy::runApp() {
 					////restarts loop time
 					clock.restart();
 					elapsed = clock.getElapsedTime();
-  					//window.clear();
 				}
 
 			}
@@ -222,10 +202,8 @@ void FlappyAndy::runApp() {
 		if (collisionSuccess == true && elapsed >= sf::seconds(3)) {
 			window.close();
 		}
-		
 
 	}//end of open window section
-
 }
 
 
