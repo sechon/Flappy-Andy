@@ -1,0 +1,65 @@
+﻿  Rules.cpp
+c:\users\ichibahn\documents\github\flappyandy\sfml\rules.cpp(18): warning C4305: 'argument': truncation from 'double' to 'float'
+  Points.cpp
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(36): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(37): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(38): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(39): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(40): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(41): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(42): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(43): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(44): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(45): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(46): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(47): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(48): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(61): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(62): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(101): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(102): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(103): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(104): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(105): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(106): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(107): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(108): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(109): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(110): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(111): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(112): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(113): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(117): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(118): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(119): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(120): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(121): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(122): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(123): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(124): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(125): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\points.cpp(126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  main.cpp
+c:\users\ichibahn\documents\github\flappyandy\sfml\main.cpp(36): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\main.cpp(40): warning C4305: 'argument': truncation from 'double' to 'float'
+  FlappyAndy.cpp
+c:\users\ichibahn\documents\github\flappyandy\sfml\flappyandy.cpp(13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\flappyandy.cpp(39): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\flappyandy.cpp(52): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\flappyandy.cpp(56): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\flappyandy.cpp(63): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\flappyandy.cpp(67): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\flappyandy.cpp(103): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\ichibahn\documents\github\flappyandy\sfml\flappyandy.cpp(174): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ichibahn\documents\github\flappyandy\sfml\flappyandy.cpp(178): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  sfml.vcxproj -> C:\Users\Ichibahn\Documents\GitHub\FlappyAndy\sfml\Debug\sfml.exe
+  sfml.vcxproj -> C:\Users\Ichibahn\Documents\GitHub\FlappyAndy\sfml\Debug\sfml.pdb (Full PDB)
